@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href = "{{ url_for('static', filename ='styles.css')}}">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Harga Mobil Bekas Jepang di Australia</title>
+</head>
+<body>
+    <div class="container contact-form">
+        <div class="contact-image">
+            <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+        </div>
+        <form action="{{url_for('predict')}}" method="post">
+            <h3>Prediksi Harga Mobil Bekas Jepang</h3>
+           <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <select class="form-control" id="" name="Mobil" data-component="dropdown" required="">
+                            <option value=""> Mobil </option>
+                            <option value="0"> Honda </option>
+                            <option value="1"> Hyundai </option>
+                            <option value="2"> Isuzu </option>
+                            <option value="3"> Mazda </option>
+                            <option value="4"> Mitsubishi </option>
+                            <option value="5"> Nissan </option>
+                            <option value="6"> Subaru </option>
+                            <option value="7"> Suzuki </option>
+                            <option value="8"> Toyota </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Tahun" class="form-control" placeholder="Tahun" value="" />
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Jarak" class="form-control" placeholder="Jarak" value="" />
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" id="" name="Tipe" data-component="dropdown" required="">
+                            <option value=""> Tipe </option>
+                            <option value="0"> Blind Van </option>
+                            <option value="1"> Bus </option>
+                            <option value="2"> Cab Chassis </option>
+                            <option value="3"> Club Cab Chassis </option>
+                            <option value="4"> Club Cab Pickup </option>
+                            <option value="5"> Club Cab Utility </option>
+                            <option value="6"> Coil Cab Chassis </option>
+                            <option value="7"> Convertible </option>
+                            <option value="8"> Coupe </option>
+                            <option value="9"> Crew Cab Chassis </option>
+                            <option value="10"> Crew Cab Utility </option>
+                            <option value="11"> Crew Van </option>
+                            <option value="12"> Double Cab Chassis </option>
+                            <option value="13"> Double Cab Pick Up </option>
+                            <option value="14"> Double Cab Utility </option>
+                            <option value="15"> Dual Cab Chassis </option>
+                            <option value="16"> Dual Cab Pick-up </option>
+                            <option value="17"> Dual Cab Utility </option>
+                            <option value="18"> Fastback </option>
+                            <option value="19"> Freestyle Cab Chassis </option>
+                            <option value="20"> Freestyle Utility </option>
+                            <option value="21"> Hardtop </option>
+                            <option value="22"> Hatchback </option>
+                            <option value="23"> King Cab Pick Up </option>
+                            <option value="24"> King Cab Utility </option>
+                            <option value="25"> Leaf Cab Chassis </option>
+                            <option value="26"> Liftback </option>
+                            <option value="27"> Pickup </option>
+                            <option value="28"> Roadster </option>
+                            <option value="29"> Sedan </option>
+                            <option value="30"> Space Cab Chassis </option>
+                            <option value="31"> Space Cab Utility </option>
+                            <option value="32"> Sportswagon </option>
+                            <option value="33"> Troop Carrier </option>
+                            <option value="34"> Utility </option>
+                            <option value="35"> Van </option>
+                            <option value="36"> Wagon </option>
+                            <option value="37"> X Cab Cab Chassis </option>
+                            <option value="38"> X Cab Pickup </option>
+                            <option value="39"> X Cab Utility </option>
+                            <option value="40"> Toyota </option>
+                            <option value="41"> Suzuki </option>                             
+                        </select>
+                    </div>                    
+                    <div class="form-group">
+                        <select class="form-control" id="" name="Gearbox" data-component="dropdown" required="">                        
+                            <option value=""> Gearbox </option>
+                            <option value="0"> Automatic </option>
+                            <option value="1"> Manual </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <select class="form-control" id="" name="BBM" data-component="dropdown" required="">                        
+                            <option value=""> BBM </option>
+                            <option value="0"> Diesel </option>
+                            <option value="1"> Premium Unleaded Petrol </option>
+                            <option value="2"> Premium Unleaded/Electric </option>
+                            <option value="3"> Unleaded Petrol </option>
+                            <option value="4"> Unleaded Petrol/Electric </option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="CC" class="form-control" placeholder="CC *" value="" />
+                    </div>                    
+                    <div class="form-group">
+                        <select class="form-control" id="" name="Warna" data-component="dropdown" required="">                        
+                            <option value=""> Warna </option>
+                            <option value="0"> Alabaster </option>
+                            <option value="1"> Artic </option>
+                            <option value="2"> Atomic </option>
+                            <option value="3"> Beige </option>
+                            <option value="4"> Black </option>
+                            <option value="5"> Blue </option>
+                            <option value="6"> Bronze </option>
+                            <option value="7"> Brown </option>
+                            <option value="8"> Burgundy </option>
+                            <option value="9">Caribbean </option>
+                            <option value="10"> Celestite </option>
+                            <option value="11"> Charcoal </option>
+                            <option value="12"> Cherry </option>
+                            <option value="13"> Cloth </option>
+                            <option value="14"> Cream </option>
+                            <option value="15"> CRYSTAL </option>
+                            <option value="16"> Dark </option>
+                            <option value="17"> Darkblue </option>
+                            <option value="18"> Diamond </option>
+                            <option value="19"> Dusty </option>
+                            <option value="20"> Ebony </option>
+                            <option value="21"> Fabric </option>
+                            <option value="22"> Frosted </option>
+                            <option value="23"> Galena </option>
+                            <option value="24"> Glacier</option>
+                            <option value="25"> Glossy </option>
+                            <option value="26"> Gold </option>
+                            <option value="27"> Graphite </option>
+                            <option value="28"> Green </option>
+                            <option value="29"> Grey </option>
+                            <option value="30"> Gun </option>
+                            <option value="31"> Gunmetal </option>
+                            <option value="32"> Hornet </option>
+                            <option value="33"> Ice </option>
+                            <option value="34"> Ivory </option>
+                            <option value="35"> Jungle </option>
+                            <option value="36"> Light </option>
+                            <option value="37"> Liquid </option>
+                            <option value="38"> Lunar </option>
+                            <option value="39"> Machine </option>
+                            <option value="40"> Magenta </option>
+                            <option value="41"> Magnetic </option>                            
+                            <option value="42"> Marble </option>
+                            <option value="43"> Marine </option>
+                            <option value="44"> Maroon </option>
+                            <option value="45"> Metallic </option>
+                            <option value="46"> Meteor </option>
+                            <option value="47"> MINERAL </option>
+                            <option value="48"> NAVY </option>
+                            <option value="49">Nebula </option>
+                            <option value="50"> neon </option>
+                            <option value="51"> New </option>
+                            <option value="52"> night </option>
+                            <option value="53"> Oak </option>
+                            <option value="54"> Onyx </option>
+                            <option value="55"> Orange </option>
+                            <option value="56"> Other </option>
+                            <option value="57"> pearl </option>
+                            <option value="58"> Pepper </option>
+                            <option value="59"> Pink </option>
+                            <option value="60"> Plasma </option>
+                            <option value="61"> Polar </option>
+                            <option value="62"> purple </option>
+                            <option value="63"> Red </option>
+                            <option value="64"> Ruby </option>
+                            <option value="65"> Sapphire </option>
+                            <option value="66"> Silver </option>
+                            <option value="67"> Sky </option>
+                            <option value="68"> Snowflake </option>
+                            <option value="69"> Soul </option>
+                            <option value="70"> Sparkling </option>
+                            <option value="71"> Steel </option>
+                            <option value="72"> Surfy </option>
+                            <option value="73"> Tidal </option>
+                            <option value="74"> Titanium </option>
+                            <option value="75"> Toy </option>
+                            <option value="76"> Vitamin </option>
+                            <option value="77"> vivid </option>
+                            <option value="78"> White </option>
+                            <option value="79"> Yellow </option>                                                      
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="Kapasitas" class="form-control" placeholder="Kapasitas  *" value="" />
+                    </div>
+                    <div class="form-group">
+                       <button type="submit" class="btnContact"> Hasil</button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h3>Hasil Prediksi</h3>
+                    <h3>{{ prediction_text }}</h3>
+                </div>
+            </div>
+        </form>
+</div>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>

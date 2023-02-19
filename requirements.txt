@@ -1,0 +1,8 @@
+Flask 
+gunicorn
+wfastcgi
+pandas
+pickle
+numpy
+seaborn
+scikit-learn
